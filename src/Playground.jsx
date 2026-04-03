@@ -6,7 +6,14 @@ function normBase(url) {
     .replace(/\/$/, "");
 }
 
+function readPageOrigin() {
+  if (typeof window === "undefined") return "";
+  return window.location.origin;
+}
+
 export default function Playground() {
+  const [pageOrigin] = useState(readPageOrigin);
+
   const [baseInput, setBaseInput] = useState(
     () => normBase(import.meta.env.VITE_OPENATS_URL) || "http://localhost:3000",
   );
@@ -70,10 +77,12 @@ export default function Playground() {
       <header className="playground__header">
         <h1>OpenATS origin test</h1>
         <p className="playground__intro">
-          Vite app for testing allowed origins in OpenATS. This runs on port{" "}
-          <strong>5173</strong>.<br /> Add <code>http://localhost:5173</code>{" "}
-          under <strong>Settings → Careers</strong> allowed origins, then set
-          your OpenATS base URL below and <strong>Apply</strong>.
+          Vite app for testing allowed origins in OpenATS. This page’s origin is{" "}
+          <code>{pageOrigin || "…"}</code>
+          {pageOrigin ? " (from your current URL)" : null}. Add{" "}
+          <strong>that same origin</strong> under{" "}
+          <strong>Settings → Careers</strong> allowed origins, then set your
+          OpenATS base URL below and <strong>Apply</strong>.
         </p>
         <div className="playground__base">
           <input
