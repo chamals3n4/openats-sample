@@ -1,0 +1,210 @@
+.playground {
+  padding: 0 1.5rem 2.5rem;
+  text-align: left;
+}
+
+.playground__header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.playground__header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.65rem;
+  letter-spacing: -0.03em;
+  color: var(--text-h);
+}
+
+.playground__intro {
+  margin: 0 0 1.25rem;
+  max-width: min(52rem, 100%);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.playground__base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.playground__base input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  max-width: min(100%, 28rem);
+  padding: 0.5rem 0.65rem;
+  font: inherit;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.4s ease-in-out;
+}
+
+.playground__base input:hover {
+  border-color: #3f3f3f;
+}
+
+.playground__base input:focus-visible {
+  border-color: #525252;
+}
+
+.playground__base button {
+  flex: 0 0 auto;
+  min-width: 9.25rem;
+  padding: 0.5rem 1.5rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--text-h);
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color 0.4s ease-in-out,
+    background-color 0.4s ease-in-out;
+}
+
+.playground__base button:hover {
+  border-color: var(--accent-border);
+}
+
+.playground__base button:focus-visible {
+  border-color: #525252;
+}
+
+.playground__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .playground__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.playground__panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  min-height: 12rem;
+  background: var(--panel-bg);
+}
+
+.playground__panel h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.playground__hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.playground__hint code {
+  font-size: 0.78rem;
+}
+
+.playground__refresh {
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  font: inherit;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.playground__refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.playground__error {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: #f87171;
+}
+
+.playground__empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.playground__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.playground__list li {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.playground__list li:last-child {
+  border-bottom: none;
+}
+
+.playground__jobLink {
+  display: block;
+  padding: 0.55rem 0.35rem;
+  margin: 0 -0.35rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.playground__jobLink:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.playground__jobLink:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.playground__list strong {
+  display: block;
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.playground__meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.playground__embedHost {
+  min-height: 6rem;
+  margin-top: 0.25rem;
+}
+
+.playground__embedHost:empty::before {
+  content: "";
+  display: block;
+  min-height: 4rem;
+}
